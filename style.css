@@ -1,0 +1,61 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --blue: #007bff;
+    --white: #ffffff;
+  }
+  
+  h1 {
+    text-align: center; /* Centraliza o título */
+    color: var(--blue);
+    margin-bottom: 20px; /* Espaço abaixo do título */
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Alterado para min-height para garantir que o formulário seja totalmente visível em dispositivos pequenos */
+  }
+  
+  #questionnaire {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%; /* Ajuste a largura do formulário */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  select {
+    width: calc(100% - 22px); /* Ajuste a largura do select para levar em consideração a borda */
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que a largura inclua o preenchimento e a borda */
+  }
+  
+  button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #2785e9;
+  }

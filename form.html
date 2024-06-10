@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interrogatório Policial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="questionnaire">
+        <h1>Interrogatório Policial</h1>
+        <label for="q1">1. Telefonou para a vítima?</label>
+        <select id="q1" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q2">2. Esteve no local da ocorrência?</label>
+        <select id="q2" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q3">3. Mora perto da vítima?</label>
+        <select id="q3" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q4">4. Já trabalhou com a vítima?</label>
+        <select id="q4" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q5">5. Devia para a vítima?</label>
+        <select id="q5" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q6">6. Conhece alguém que poderia prejudicar a vítima?</label>
+        <select id="q6" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q7">7. Tem algum histórico de conflitos com a vítima?</label>
+        <select id="q7" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q8">8. Sabe se alguém poderia roubar ou causar dano à vítima?</label>
+        <select id="q8" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q9">9. Alguma vez emprestou dinheiro ou objetos valiosos para a vítima?</label>
+        <select id="q9" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+        <label for="q10">10. Estava ocupado durante o horário do incidente?</label>
+        <select id="q10" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select><br>
+
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('questionnaire').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            
+            let yesCount = 0;
+
+            
+            for (let i = 1; i <= 10; i++) {
+                let answer = document.getElementById('q' + i).value;
+                if (answer === 'sim') {
+                    yesCount++;
+                }
+            }
+
+            
+            let classification;
+            if (yesCount === 5) {
+                classification = 'Suspeita';
+            } else if (yesCount >= 6 && yesCount <= 8) {
+                classification = 'Cúmplice';
+            } else if (yesCount >= 9) {
+                classification = 'Culpada';
+            } else {
+                classification = 'Inocente';
+            }
+
+            
+            alert('Classificação: ' + classification);
+
+            
+            document.getElementById('questionnaire').reset();
+        });
+    </script>
+</body>
+</html>
